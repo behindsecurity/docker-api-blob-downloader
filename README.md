@@ -30,14 +30,14 @@ To use the script, you will need to provide the Docker registry URL and the imag
 
 - `--registry_url`: The FULL URL for the Docker registry (required)
 - `--image`: Name of the image (required)
-- `--tag`: Specific tag of the image (optional)
+- `--tag`: Specific tag of the image (optional, tries to get latest tag if not specified)
 - `--username`: Username for authentication (default: `admin`)
 - `--password`: Password for authentication (default: `admin`)
 
 ### Example Command
 
 ```bash
-python3 blob_downloader.py --registry_url https://example.com --image myapp --username user --password pass
+python3 blob_downloader.py --registry_url https://example.com:5000/v2 --image myapp --username user --password pass
 ```
 
 This command downloads all blobs for the latest tag of the `myapp` image from the registry hosted at `https://example.com`.
